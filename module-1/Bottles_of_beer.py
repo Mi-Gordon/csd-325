@@ -22,6 +22,15 @@ def main():
         except ValueError:
             print('This must be a number!')
 
+    # Pass user input to countdown function
+    countdown(num_bottles)
+
+    # Print final message before the program terminates
+    print('\nTime to buy more bottles of beer.\n')
+
+
+def countdown(num_bottles):
+
     # Start the loop counting down the number of bottles
     while num_bottles > 0:
 
@@ -45,9 +54,6 @@ def main():
 
             # Still need to decrease to prevent endless loop
             num_bottles -= 1
-
-    # Print final message before the program terminates
-    print('\nTime to buy more bottles of beer.\n')
 
 
 # Welcome the user and give an explination of what the program does
