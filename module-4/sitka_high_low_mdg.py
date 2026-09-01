@@ -1,3 +1,7 @@
+# Mike Gordon
+# CSD325 Advanced Python 
+# 9/1/26
+
 import csv
 import sys
 from datetime import datetime
