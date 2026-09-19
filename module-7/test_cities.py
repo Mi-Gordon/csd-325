@@ -1,3 +1,7 @@
+# Michael Gordon
+# CSD-325
+# Assignment 7.2
+
 import unittest
 from city_functions import city_country
 
