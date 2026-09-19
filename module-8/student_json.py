@@ -3,17 +3,18 @@
 # Module 8.2
 
 import json
-from os import path
 
 filename = 'student.json'
 students = []
 
-if path.isfile(filename) is False:
-    raise Exception("File not found")
-
-# Open the file and use the JSON load() function to load the file into a Python class list
-with open(filename, 'r') as file:
-    students = json.load(file)
+# Try/Except for filename
+try:
+    # Open the file and use the JSON load() function to load the file into a Python class list
+    with open(filename, 'r') as file:
+        students = json.load(file)
+except FileNotFoundError:
+    print('Error: student.json was not found.')
+    exit()
 
 
 # Create a function that loops through the .json class list and prints out each value
