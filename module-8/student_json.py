@@ -3,9 +3,16 @@
 # Module 8.2
 
 import json
+from os import path
+
+filename = 'student.json'
+students = []
+
+if path.isfile(filename) is False:
+    raise Exception("File not found")
 
 # Open the file and use the JSON load() function to load the file into a Python class list
-with open('student.json', 'r') as file:
+with open(filename, 'r') as file:
     students = json.load(file)
 
 
@@ -21,7 +28,7 @@ def student_values(file):
 
 
 # Output notification to the user that this is the original Student list
-print('\nThis is the original Student list.')
+print('\nThis is the original Student list.\n')
 
 
 # Call your print function
@@ -37,7 +44,7 @@ students.append({
 })
 
 # Output notification to the user that this is the updated Student list
-print('\nThis is the updated Student list.')
+print('\nThis is the updated Student list.\n')
 
 
 # Call your print function
@@ -48,4 +55,4 @@ with open('Student.json', 'w') as json_file:
     json.dump(students, json_file)
 
 # Output notification to the user that the .json file was updated
-print('Successfully appended to the JSON file!')
+print('\nSuccessfully appended to the JSON file!\n')
