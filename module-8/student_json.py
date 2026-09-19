@@ -51,8 +51,10 @@ print('\nThis is the updated Student list.\n')
 student_values(students)
 
 # Use the JSON dump() function to append the new data to the .json file
-with open('Student.json', 'w') as json_file:
-    json.dump(students, json_file)
+with open(filename, 'w') as json_file:
+    json.dump(students, json_file,
+              indent=4,
+              separators=(',', ': '))
 
 # Output notification to the user that the .json file was updated
 print('\nSuccessfully appended to the JSON file!\n')
