@@ -26,14 +26,17 @@ class Todo(tk.Tk):
 
         # Create Menu Bar
         menu_bar = tk.Menu(self)
-        self.config(menu=menu_bar)
 
         # Create File Menu
-        file_menu = tk.Menu(menu_bar, tearoff=0)
-        menu_bar.add_cascade(label='File', menu=file_menu)
+        file = tk.Menu(menu_bar, tearoff=0)
+
+        menu_bar.add_cascade(label='File', menu=file)
 
         # Add Exit Option
-        file_menu.add_command(label='Exit', command=self.destroy)
+        file.add_command(label='Exit', command=self.destroy)
+
+        # Display Menu
+        self.config(menu=menu_bar)
 
         self.task_create = tk.Text(
             self.text_frame, height=3, bg="white", fg="black")
